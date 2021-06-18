@@ -7,6 +7,7 @@ var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
 var bird, slingshot;
+var score=0;
 
 var gameState = "onSling";
 var bg = "sprites/bg1.png";
@@ -20,8 +21,6 @@ function setup(){
     var canvas = createCanvas(1200,400);
     engine = Engine.create();
     world = engine.world;
-
-
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
 
@@ -49,6 +48,9 @@ function setup(){
 function draw(){
     if(backgroundImg)
         background(backgroundImg);
+        
+    textSize(25)
+    text ("score" + score ,60,50)
     
     
     Engine.update(engine);
